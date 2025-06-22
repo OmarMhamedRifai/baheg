@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم بهيج - مطعم الأسماك والمأكولات البحرية</title>
+    <link rel="stylesheet" href="مطعم-بهيج.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="baheg-logo.jpg" alt="مطعم بهيج" class="logo-img">
+                <span class="logo-text">مطعم بهيج</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">الرئيسية</a>
+                <a href="#about" class="nav-link">عن المطعم</a>
+                <a href="#menu" class="nav-link">قائمة الطعام</a>
+                <a href="#gallery" class="nav-link">المعرض</a>
+                <a href="#contact" class="nav-link">التواصل</a>
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <span class="user-name" id="userName"></span>
+                    <span class="user-branch" id="userBranch"></span>
+                    <button onclick="logout()" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        تسجيل الخروج
+                    </button>
+                </div>
+                <a href="login.html" class="nav-link login-btn-nav" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    تسجيل الدخول
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <video class="hero-video" autoplay muted loop>
+            <source src="(20+) Facebook - Google Chrome 2025-06-22 03-17-09.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">مطعم بهيج</h1>
+                <p class="hero-subtitle">مطعم الأسماك والمأكولات البحرية الأشهر</p>
+                <p class="hero-description">نقدم لك أفضل أنواع الأسماك الطازجة والمأكولات البحرية الشهية في أجواء فاخرة ومريحة</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('menu')">
+                        <i class="fas fa-utensils"></i>
+                        قائمة الطعام
+                    </button>
+                    <button class="btn-secondary" onclick="scrollToSection('contact')">
+                        <i class="fas fa-phone"></i>
+                        احجز الآن
+                    </button>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">عن المطعم</h2>
+                <p class="section-subtitle">تعرف على قصة نجاحنا</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>قصة بدايتنا</h3>
+                    <p>بدأت رحلتنا منذ أكثر من 15 عاماً، عندما قررنا تقديم أفضل أنواع الأسماك والمأكولات البحرية لعملائنا الكرام. نحن نؤمن بأن الجودة والطازجة هما أساس النجاح.</p>
+                    
+                    <h3>رؤيتنا</h3>
+                    <p>نسعى لأن نكون الخيار الأول لعشاق المأكولات البحرية، من خلال تقديم أطباق فريدة ومميزة بأعلى معايير الجودة والطازجة.</p>
+                    
+                    <h3>مميزاتنا</h3>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> أسماك طازجة يومياً</li>
+                        <li><i class="fas fa-check"></i> طهي احترافي</li>
+                        <li><i class="fas fa-check"></i> خدمة مميزة</li>
+                        <li><i class="fas fa-check"></i> أجواء فاخرة</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="عن المطعم.jpg" alt="مطعم بهيج">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">قائمة الطعام</h2>
+                <p class="section-subtitle">اختر من قوائمنا المميزة</p>
+            </div>
+            
+            <div class="menu-cards">
+                <!-- رسالة تسجيل الدخول -->
+                <div class="login-message" id="loginMessage">
+                    <div class="login-message-content">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <h3>سجل دخولك لعرض قائمة الطعام</h3>
+                        <p>يرجى تسجيل الدخول واختيار الفرع لعرض القائمة المناسبة</p>
+                        <a href="login.html" class="btn-primary">
+                            <i class="fas fa-sign-in-alt"></i>
+                            تسجيل الدخول
+                        </a>
+                    </div>
+                </div>
+
+                <!-- فرع التجمع الخامس -->
+                <div class="menu-card" data-branch="tagamo5">
+                    <div class="menu-card-image">
+                        <img src="طعام.jpg" alt="فرع التجمع الخامس">
+                    </div>
+                    <div class="menu-card-overlay">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>فرع التجمع الخامس</h3>
+                        <p>القائمة المميزة - أسماك طازجة ومأكولات بحرية فاخرة</p>
+                        
+                        <!-- صورتين المينيو -->
+                        <div class="menu-preview-images">
+                            <div class="menu-preview-item">
+                                <img src="مينيو التجمع الخامس ومدينه نصر.jpg" alt="قائمة الأسماك الطازجة" onclick="showMenuImageModal('مينيو التجمع الخامس ومدينه نصر.jpg', 'قائمة الأسماك الطازجة - فرع التجمع الخامس')">
+                                <div class="menu-preview-overlay">
+                                    <button class="zoom-btn" onclick="showMenuImageModal('مينيو التجمع الخامس ومدينه نصر.jpg', 'قائمة الأسماك الطازجة - فرع التجمع الخامس')">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                                <span>قائمة الأسماك الطازجة</span>
+                            </div>
+                            <div class="menu-preview-item">
+                                <img src="مينيو التجمع الخامس ومدينه نصر2.jpg" alt="قائمة المأكولات البحرية" onclick="showMenuImageModal('مينيو التجمع الخامس ومدينه نصر2.jpg', 'قائمة المأكولات البحرية - فرع التجمع الخامس')">
+                                <div class="menu-preview-overlay">
+                                    <button class="zoom-btn" onclick="showMenuImageModal('مينيو التجمع الخامس ومدينه نصر2.jpg', 'قائمة المأكولات البحرية - فرع التجمع الخامس')">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                                <span>قائمة المأكولات البحرية</span>
+                            </div>
+                        </div>
+                        
+                        <button class="menu-btn" onclick="openMenu('premium')">
+                            <i class="fas fa-eye"></i>
+                            عرض القائمة
+                        </button>
+                    </div>
+                </div>
+
+                <!-- فرع وسط البلد -->
+                <div class="menu-card" data-branch="wust">
+                    <div class="menu-card-image">
+                        <img src="طعام.jpg" alt="فرع وسط البلد">
+                    </div>
+                    <div class="menu-card-overlay">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>فرع وسط البلد</h3>
+                        <p>القائمة العادية - مأكولات بحرية شهية بأسعار مناسبة</p>
+                        
+                        <!-- صورتين المينيو -->
+                        <div class="menu-preview-images">
+                            <div class="menu-preview-item">
+                                <img src="اخر.png" alt="قائمة الأسماك الطازجة" onclick="showMenuImageModal('اخر.png', 'قائمة الأسماك الطازجة - فرع وسط البلد')">
+                                <div class="menu-preview-overlay">
+                                    <button class="zoom-btn" onclick="showMenuImageModal('اخر.png', 'قائمة الأسماك الطازجة - فرع وسط البلد')">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                                <span>قائمة الأسماك الطازجة</span>
+                            </div>
+                            <div class="menu-preview-item">
+                                <img src="احر2.png" alt="قائمة المأكولات البحرية" onclick="showMenuImageModal('احر2.png', 'قائمة المأكولات البحرية - فرع وسط البلد')">
+                                <div class="menu-preview-overlay">
+                                    <button class="zoom-btn" onclick="showMenuImageModal('احر2.png', 'قائمة المأكولات البحرية - فرع وسط البلد')">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                                <span>قائمة المأكولات البحرية</span>
+                            </div>
+                        </div>
+                        
+                        <button class="menu-btn" onclick="openMenu('standard')">
+                            <i class="fas fa-eye"></i>
+                            عرض القائمة
+                        </button>
+                    </div>
+                </div>
+
+                <!-- فرع الإسكندرية -->
+                <div class="menu-card" data-branch="alexandria">
+                    <div class="menu-card-image">
+                        <img src="طعام.jpg" alt="فرع الإسكندرية">
+                    </div>
+                    <div class="menu-card-overlay">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>فرع الإسكندرية</h3>
+                        <p>القائمة العادية - أسماك بحرية طازجة من ميناء الإسكندرية</p>
+                        
+                        <!-- صورتين المينيو -->
+                        <div class="menu-preview-images">
+                            <div class="menu-preview-item">
+                                <img src="اخر.png" alt="قائمة الأسماك الطازجة" onclick="showMenuImageModal('اخر.png', 'قائمة الأسماك الطازجة - فرع الإسكندرية')">
+                                <div class="menu-preview-overlay">
+                                    <button class="zoom-btn" onclick="showMenuImageModal('اخر.png', 'قائمة الأسماك الطازجة - فرع الإسكندرية')">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                                <span>قائمة الأسماك الطازجة</span>
+                            </div>
+                            <div class="menu-preview-item">
+                                <img src="اخر.png" alt="قائمة المأكولات البحرية" onclick="showMenuImageModal('اخر.png', 'قائمة المأكولات البحرية - فرع الإسكندرية')">
+                                <div class="menu-preview-overlay">
+                                    <button class="zoom-btn" onclick="showMenuImageModal('اخر.png', 'قائمة المأكولات البحرية - فرع الإسكندرية')">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                                <span>قائمة المأكولات البحرية</span>
+                            </div>
+                        </div>
+                        
+                        <button class="menu-btn" onclick="openMenu('standard')">
+                            <i class="fas fa-eye"></i>
+                            عرض القائمة
+                        </button>
+                    </div>
+                </div>
+
+                <!-- فرع شيراتون -->
+                <div class="menu-card" data-branch="sheraton">
+                    <div class="menu-card-image">
+                        <img src="طعام.jpg" alt="فرع شيراتون">
+                    </div>
+                    <div class="menu-card-overlay">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>فرع شيراتون</h3>
+                        <p>القائمة العادية - مأكولات بحرية في أجواء فاخرة</p>
+                        
+                        <!-- صورتين المينيو -->
+                        <div class="menu-preview-images">
+                            <div class="menu-preview-item">
+                                <img src="اخر.png" alt="قائمة الأسماك الطازجة" onclick="showMenuImageModal('اخر.png', 'قائمة الأسماك الطازجة - فرع شيراتون')">
+                                <div class="menu-preview-overlay">
+                                    <button class="zoom-btn" onclick="showMenuImageModal('اخر.png', 'قائمة الأسماك الطازجة - فرع شيراتون')">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                                <span>قائمة الأسماك الطازجة</span>
+                            </div>
+                            <div class="menu-preview-item">
+                                <img src="اخر.png" alt="قائمة المأكولات البحرية" onclick="showMenuImageModal('اخر.png', 'قائمة المأكولات البحرية - فرع شيراتون')">
+                                <div class="menu-preview-overlay">
+                                    <button class="zoom-btn" onclick="showMenuImageModal('اخر.png', 'قائمة المأكولات البحرية - فرع شيراتون')">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                                <span>قائمة المأكولات البحرية</span>
+                            </div>
+                        </div>
+                        
+                        <button class="menu-btn" onclick="openMenu('standard')">
+                            <i class="fas fa-eye"></i>
+                            عرض القائمة
+                        </button>
+                    </div>
+                </div>
+
+                <!-- فرع مدينة نصر -->
+                <div class="menu-card" data-branch="nasrcity">
+                    <div class="menu-card-image">
+                        <img src="طعام.jpg" alt="فرع مدينة نصر">
+                    </div>
+                    <div class="menu-card-overlay">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>فرع مدينة نصر</h3>
+                        <p>القائمة المميزة - أسماك طازجة ومأكولات بحرية فاخرة</p>
+                        
+                        <!-- صورتين المينيو -->
+                        <div class="menu-preview-images">
+                            <div class="menu-preview-item">
+                                <img src="مينيو التجمع الخامس ومدينه نصر.jpg" alt="قائمة الأسماك الطازجة" onclick="showMenuImageModal('مينيو التجمع الخامس ومدينه نصر.jpg', 'قائمة الأسماك الطازجة - فرع مدينة نصر')">
+                                <div class="menu-preview-overlay">
+                                    <button class="zoom-btn" onclick="showMenuImageModal('مينيو التجمع الخامس ومدينه نصر.jpg', 'قائمة الأسماك الطازجة - فرع مدينة نصر')">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                                <span>قائمة الأسماك الطازجة</span>
+                            </div>
+                            <div class="menu-preview-item">
+                                <img src="مينيو التجمع الخامس ومدينه نصر2.jpg" alt="قائمة المأكولات البحرية" onclick="showMenuImageModal('مينيو التجمع الخامس ومدينه نصر2.jpg', 'قائمة المأكولات البحرية - فرع مدينة نصر')">
+                                <div class="menu-preview-overlay">
+                                    <button class="zoom-btn" onclick="showMenuImageModal('مينيو التجمع الخامس ومدينه نصر2.jpg', 'قائمة المأكولات البحرية - فرع مدينة نصر')">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                                <span>قائمة المأكولات البحرية</span>
+                            </div>
+                        </div>
+                        
+                        <button class="menu-btn" onclick="openMenu('premium')">
+                            <i class="fas fa-eye"></i>
+                            عرض القائمة
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">معرض الصور</h2>
+                <p class="section-subtitle">شاهد أجمل لحظاتنا</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="معرض1.jpg" alt="مطعم بهيج">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="معرض2.jpg" alt="أسماك طازجة">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="معرض3.jpg" alt="مأكولات بحرية">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">تواصل معنا</h2>
+                <p class="section-subtitle">نحن هنا لخدمتك</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>العنوان</h3>
+                            <p id="branchAddress">يرجى تسجيل الدخول لعرض عنوان الفرع</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>الهاتف</h3>
+                            <p id="branchPhone">يرجى تسجيل الدخول لعرض رقم الهاتف</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>البريد الإلكتروني</h3>
+                            <p>info@baheg.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>ساعات العمل</h3>
+                            <p id="branchHours">السبت - الخميس: 12:00 م - 12:00 ص<br>الجمعة: 2:00 م - 12:00 ص</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- رسالة تسجيل الدخول -->
+                <div class="contact-login-message" id="contactLoginMessage">
+                    <div class="contact-login-content">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <h3>سجل دخولك لعرض معلومات الفرع</h3>
+                        <p>بعد تسجيل الدخول واختيار الفرع، ستظهر لك معلومات التواصل الخاصة بالفرع المختار</p>
+                        <a href="login.html" class="btn-primary">
+                            <i class="fas fa-sign-in-alt"></i>
+                            تسجيل الدخول
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-media">
+                <h3>تابعنا على وسائل التواصل</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="baheg-logo.jpg" alt="مطعم بهيج">
+                        <h3>مطعم بهيج</h3>
+                    </div>
+                    <p>مطعم الأسماك والمأكولات البحرية الأشهر في مصر</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#about">عن المطعم</a></li>
+                        <li><a href="#menu">قائمة الطعام</a></li>
+                        <li><a href="#gallery">المعرض</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>فروعنا</h4>
+                    <ul>
+                        <li>التجمع الخامس</li>
+                        <li>مدينة نصر</li>
+                        <li>وسط البلد - القاهرة</li>
+                        <li>شيراتون</li>
+                        <li>الإسكندرية</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@baheg.com</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 مطعم بهيج. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="مطعم-بهيج.js"></script>
+</body>
+</html> 
